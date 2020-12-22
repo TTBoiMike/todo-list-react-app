@@ -1,25 +1,36 @@
-import logo from './logo.svg';
+import React from 'react'
 import './App.css';
+import Create from './create'
+import Listings from './listing'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      publishedTodos: []
+    }
+    this.updatePublishedTodos = this.updatePublishedTodos.bind(this);
+  }
+
+  // update publishedTodos in state with data from create.js
+  updatePublishedTodos(title, location, time, duration) {
+    let id = this.state.publishedTodos.length;
+    let completed = false;
+    const newTodo = {title, location, time, duration, id, completed};
+    let updateTodoList = [...this.state.publishedTodos, newTodo]
+    this.setState({
+      publishedTodos: updateTodoList
+    })
+  }
+
+  render() {
+    return (
+      <div Name="App">
+        <Create onsubmit={this.updatePublishedTodos} />
+        <Listings todoinfo={this.state.publishedTodos}/>
+      </div>
+    )
+  }
 }
 
 export default App;
