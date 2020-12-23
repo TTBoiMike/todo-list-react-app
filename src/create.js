@@ -1,12 +1,11 @@
 import React from 'react'
+import './App.css'
 
 class Create extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
             title: "",
-            location: "",
-            time: "",
             duration: ""
         }
         this.handleSubmit = this.handleSubmit.bind(this)
@@ -21,21 +20,29 @@ class Create extends React.Component {
     // passes new todo information to state in App.js
     handleSubmit(event) {
         event.preventDefault();
-        this.props.onsubmit(this.state.title, this.state.location, this.state.time, this.state.duration);
+        this.props.onsubmit(this.state.title, this.state.duration);
     }
 
     render() {
         return (
             <div>
                 <h3>Create Todo</h3>
-                <form onChange={(e) => this.handleChange(e)} onSubmit={(e) => this.handleSubmit(e)}>
-                    <input type="text" id="title" placeholder="what do you need todo?" name="title" />
-                    <input type="text" id="location" placeholder="location" name="location" />
+                <form id="create-form" onChange={(e) => this.handleChange(e)} onSubmit={(e) => this.handleSubmit(e)}>
+                    <input type="text" id="title" placeholder="what do you need to do?" name="title" />
                     <div>
-                        <input type="time" id="time" name="time" />
-                        <input type="number" id="duration" name="duration" />
+                        <select name="duration" id="duration">
+                            <option value="0 minutes">0 minutes</option>
+                            <option value="15 minutes">15 minutes</option>
+                            <option value="30 minutes">30 minutes</option>
+                            <option value="45 minutes">45 minutes</option>
+                            <option value="60 minutes">60 minutes</option>
+                            <option value="75 minutes">75 minutes</option>
+                            <option value="90 minutes">90 minutes</option>
+                            <option value="105 minutes">105 minutes</option>
+                            <option value="120 minutes">120 minutes</option>
+                        </select>
                     </div>
-                    <button>Submit</button>
+                    <button>+</button>
                 </form>
             </div>
         )

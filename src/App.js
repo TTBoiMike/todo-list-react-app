@@ -1,4 +1,7 @@
 import React from 'react'
+import Container from 'react-bootstrap/Container'
+// import CSS files
+import 'bootstrap/dist/css/bootstrap.min.css'
 import './App.css';
 import Create from './create'
 import Listings from './listing'
@@ -13,10 +16,10 @@ class App extends React.Component {
   }
 
   // update publishedTodos in state with data from create.js
-  updatePublishedTodos(title, location, time, duration) {
+  updatePublishedTodos(title, duration) {
     let id = this.state.publishedTodos.length;
     let completed = false;
-    const newTodo = {title, location, time, duration, id, completed};
+    const newTodo = {title, duration, id, completed};
     let updateTodoList = [...this.state.publishedTodos, newTodo]
     this.setState({
       publishedTodos: updateTodoList
@@ -25,10 +28,12 @@ class App extends React.Component {
 
   render() {
     return (
-      <div Name="App">
-        <Create onsubmit={this.updatePublishedTodos} />
-        <Listings todoinfo={this.state.publishedTodos}/>
-      </div>
+      <Container>
+        <div className="App">
+          <Create onsubmit={this.updatePublishedTodos} />
+          <Listings todoinfo={this.state.publishedTodos}/>
+        </div>
+      </Container>
     )
   }
 }
