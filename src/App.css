@@ -35,8 +35,10 @@ button {
   align-items: center;
   border-bottom: 2px solid black;
 }
-.todo-meta {
+.todo-app-info {
+  margin-top: 25px;
   display: flex;
+  justify-content: space-between;
 }
 .meta-icon {
   height: 1.2rem;
@@ -45,4 +47,14 @@ button {
 .checkbox {
   height: 30px;
   width: 30px;
+}
+.info-icon {
+  padding: 5px 10px;
+  border-radius: 100%;
+  background-color: red;
+  color: #fff;
+  -webkit-border-radius: 100%;
+  -moz-border-radius: 100%;
+  -ms-border-radius: 100%;
+  -o-border-radius: 100%;
 }

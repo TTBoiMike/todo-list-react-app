@@ -3,6 +3,9 @@ import Clock from './assets/clock-solid.svg'
 
 
 class Listings extends React.Component {
+    constructor(props) {
+        super(props);
+    }
     
     handleCheck(e) {
         this.props.handleCheckBox(e);
@@ -27,6 +30,17 @@ class Listings extends React.Component {
         return (
             <div className="todo-listing">
                 {this.buildListingHTML()}
+                <div className="todo-app-info">
+                    <div>
+                        <p>All Tasks <span className="info-icon">{this.props.appinfo.allTodos}</span></p>
+                    </div>
+                    <div>
+                        <p>In Progress <span className="info-icon">{this.props.appinfo.inProgress}</span></p>
+                    </div>
+                    <div>
+                        <p>Completed <span className="info-icon">{this.props.appinfo.completedTodos}</span></p>
+                    </div>
+                </div>
             </div>
         )
     }

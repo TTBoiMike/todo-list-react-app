@@ -57,7 +57,7 @@ class App extends React.Component {
       <Container>
         <div className="App">
           <Create onsubmit={this.updatePublishedTodos} />
-          <Listings todoinfo={this.state.publishedTodos} handleCheckBox={this.handleCheckBox} />
+          <Listings todoinfo={this.state.publishedTodos} handleCheckBox={this.handleCheckBox} appinfo={this.state}/>
         </div>
       </Container>
     )
