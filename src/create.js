@@ -42,7 +42,7 @@ class Create extends React.Component {
                             <option value="120 minutes">120 minutes</option>
                         </select>
                     </div>
-                    <button>+</button>
+                    <button className="addTodo">+</button>
                 </form>
             </div>
         )

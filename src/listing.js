@@ -1,4 +1,5 @@
 import React from 'react'
+import AppMeta from './appMeta'
 import Clock from './assets/clock-solid.svg'
 
 
@@ -19,6 +20,7 @@ class Listings extends React.Component {
                     <div className="todo-meta">
                         <img className="meta-icon" src={Clock} alt="clock icon" />
                         {todo.duration}
+                        <p className="remove">Remove</p>
                     </div>
                 </div>
                 <input id={todo.id} onClick={(e) => this.handleCheck(e)} type="checkbox" className="checkbox" name="completed" />
@@ -30,17 +32,7 @@ class Listings extends React.Component {
         return (
             <div className="todo-listing">
                 {this.buildListingHTML()}
-                <div className="todo-app-info">
-                    <div>
-                        <p>All Tasks <span className="info-icon">{this.props.appinfo.allTodos}</span></p>
-                    </div>
-                    <div>
-                        <p>In Progress <span className="info-icon">{this.props.appinfo.inProgress}</span></p>
-                    </div>
-                    <div>
-                        <p>Completed <span className="info-icon">{this.props.appinfo.completedTodos}</span></p>
-                    </div>
-                </div>
+                <AppMeta appinfo={this.props.appinfo} clearlist={this.props.clearlist} />
             </div>
         )
     }

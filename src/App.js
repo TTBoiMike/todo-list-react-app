@@ -5,6 +5,7 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import './App.css';
 import Create from './create'
 import Listings from './listing'
+import { renderIntoDocument } from 'react-dom/test-utils';
 
 class App extends React.Component {
   constructor(props) {
@@ -17,11 +18,11 @@ class App extends React.Component {
     }
     this.updatePublishedTodos = this.updatePublishedTodos.bind(this);
     this.handleCheckBox = this.handleCheckBox.bind(this);
+    this.clearList = this.clearList.bind(this);
   }
 
-  // update publishedTodos in state with data from create.js
   updatePublishedTodos(title, duration) {
-    let id = this.state.publishedTodos.length;
+    let id = 1;
     let completed = false;
     const newTodo = {title, duration, id, completed};
     let updateTodoList = [...this.state.publishedTodos, newTodo]
@@ -30,13 +31,13 @@ class App extends React.Component {
       inProgress: state.inProgress + 1,
       allTodos: state.allTodos + 1
     }))
+    console.log(this.state.publishedTodos)
   }
 
-  // runs when the checkbox is clicked in a todo
   handleCheckBox(todo) {
     const currentTodos = this.state.publishedTodos;
     currentTodos[todo.target.id].completed = todo.target.checked;
-    if(todo.target.checked === true) {
+    if(todo.target.checked) {
       this.setState((state) => ({
         publishedTodos: currentTodos,
         completedTodos: state.completedTodos + 1,
@@ -52,12 +53,22 @@ class App extends React.Component {
     console.log(this.state)
   }
 
+  clearList() {
+    console.log("list cleared!")
+    this.setState({
+      publishedTodos: [],
+      completedTodos: 0,
+      inProgress: 0,
+      allTodos: 0
+    })
+  }
+
   render() {
     return (
       <Container>
         <div className="App">
           <Create onsubmit={this.updatePublishedTodos} />
-          <Listings todoinfo={this.state.publishedTodos} handleCheckBox={this.handleCheckBox} appinfo={this.state}/>
+          <Listings todoinfo={this.state.publishedTodos} handleCheckBox={this.handleCheckBox} appinfo={this.state} clearlist={this.clearList} />
         </div>
       </Container>
     )
