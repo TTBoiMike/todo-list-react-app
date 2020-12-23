@@ -1,13 +1,12 @@
 import React from 'react'
-import MapMarker from './assets/map-marker-alt-solid.svg'
 import Clock from './assets/clock-solid.svg'
 
 
 class Listings extends React.Component {
-    constructor(props) {
-        super(props);
-    }
     
+    handleCheck(e) {
+        this.props.handleCheckBox(e);
+    }
 
     buildListingHTML() {
         return  this.props.todoinfo.map((todo) => (
@@ -15,11 +14,11 @@ class Listings extends React.Component {
                 <div>
                     <h4>{todo.title}</h4>
                     <div className="todo-meta">
-                        <img className="meta-icon" src={Clock} />
+                        <img className="meta-icon" src={Clock} alt="clock icon" />
                         {todo.duration}
                     </div>
                 </div>
-                <input type="checkbox" className="checkbox" id="completed" name="completed" />
+                <input id={todo.id} onClick={(e) => this.handleCheck(e)} type="checkbox" className="checkbox" name="completed" />
             </div>
         ))
     }
