@@ -27,7 +27,6 @@ class App extends React.Component {
     let completed = false;
     const newTodo = {title, duration, id, completed};
     let updatedTodoList = [...this.state.allTodos, newTodo]
-    console.log(updatedTodoList)
     this.setState((state) => ({
       allTodos: updatedTodoList,
       publishedTodos: updatedTodoList,
@@ -65,14 +64,13 @@ class App extends React.Component {
   }
 
   filterPublishedTodos(filter) {
-    console.log(filter)
     if(filter === "completed") {
         let completedTodos = this.state.allTodos.filter((todo) => todo.completed === true);
         this.setState({
           publishedTodos: completedTodos
         })
     } else if (filter === "inprogress") {
-      let inProgressTodos =  this.state.allTodos.filter((todo) => todo.completed === !true)
+      let inProgressTodos =  this.state.allTodos.filter((todo) => todo.completed === false)
       this.setState({
         publishedTodos: inProgressTodos
       })
@@ -84,6 +82,7 @@ class App extends React.Component {
   }
 
   render() {
+    console.log(this.state.publishedTodos)
     return (
       <Container>
         <div className="App">
