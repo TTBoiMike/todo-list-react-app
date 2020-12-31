@@ -25,7 +25,7 @@ class Create extends React.Component {
 
     render() {
         return (
-            <form className="app-container create-form" onChange={(e) => this.handleChange(e)} onSubmit={(e) => this.handleSubmit(e)}>
+            <form className="create-form" onChange={(e) => this.handleChange(e)} onSubmit={(e) => this.handleSubmit(e)}>
                 <input type="text" id="title" placeholder="What do you need to do?" name="title" required />
                     <select name="duration" id="duration" required>
                         <option value="">How long will it take?</option>

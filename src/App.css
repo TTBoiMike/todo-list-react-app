@@ -10,13 +10,11 @@ body {
   margin: 0 auto;
   width: 500px;
   padding: 50px;
-}
-.app-container {
-  width: 100%;
-  padding: 50px;
   background-color: #fff;
+
 }
 .create-form {
+  margin-bottom: 50px;
   display: flex;
   flex-direction: column;
 }
@@ -33,7 +31,6 @@ body {
   align-items: center;
 }
 .todo-app-info {
-  padding-top: 25px;
   display: grid;
   grid-template-columns: 1fr 1fr;
   border-top: 2px solid black;
@@ -45,4 +42,16 @@ body {
 .checkbox {
   height: 30px;
   width: 30px;
+}
+button {
+  margin-top: 25px;
+}
+.button-add {
+
+}
+.button-filter {
+
+}
+.button-clear {
+  width: 100%;
 }

@@ -22,10 +22,10 @@ class Listings extends React.Component {
 
     render() {
         return (
-            <div className="app-container">
+            <div>
                 <AppMeta appinfo={this.props.appinfo} clearlist={this.props.clearlist} filter={this.props.filter}/>
                 {this.buildListingHTML()}
-                <button onClick={this.props.clearlist}>Clear List</button>
+                <button className="button-clear" onClick={this.props.clearlist}>Clear List</button>
             </div>
         )
     }
