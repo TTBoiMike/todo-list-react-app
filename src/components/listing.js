@@ -24,7 +24,7 @@ class Listings extends React.Component {
         return (
             <div className="app-container">
                 {this.buildListingHTML()}
-                <AppMeta appinfo={this.props.appinfo} clearlist={this.props.clearlist} />
+                <AppMeta appinfo={this.props.appinfo} clearlist={this.props.clearlist} filter={this.props.filter}/>
             </div>
         )
     }

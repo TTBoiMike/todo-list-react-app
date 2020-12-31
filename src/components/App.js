@@ -16,10 +16,10 @@ class App extends React.Component {
       inProgress: 0,
       totalTodos: 0
     }
-
     this.updateAllTodos = this.updateAllTodos.bind(this);
     this.handleCheckBox = this.handleCheckBox.bind(this);
     this.clearList = this.clearList.bind(this);
+    this.filterPublishedTodos = this.filterPublishedTodos.bind(this)
   }
 
   updateAllTodos(title, duration) {
@@ -64,12 +64,31 @@ class App extends React.Component {
     })
   }
 
+  filterPublishedTodos(filter) {
+    console.log(filter)
+    if(filter === "completed") {
+        let completedTodos = this.state.allTodos.filter((todo) => todo.completed === true);
+        this.setState({
+          publishedTodos: completedTodos
+        })
+    } else if (filter === "inprogress") {
+      let inProgressTodos =  this.state.allTodos.filter((todo) => todo.completed === !true)
+      this.setState({
+        publishedTodos: inProgressTodos
+      })
+    } else {
+      this.setState((state) => ({
+        publishedTodos: state.allTodos
+      }))
+    }
+  }
+
   render() {
     return (
       <Container>
         <div className="App">
           <Create onsubmit={this.updateAllTodos} />
-          <Listings todoinfo={this.state.publishedTodos} handleCheckBox={this.handleCheckBox} appinfo={this.state} clearlist={this.clearList} />
+          <Listings todoinfo={this.state.publishedTodos} handleCheckBox={this.handleCheckBox} appinfo={this.state} clearlist={this.clearList} filter={this.filterPublishedTodos}/>
         </div>
       </Container>
     )
