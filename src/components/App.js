@@ -2,64 +2,65 @@ import React from 'react'
 import Container from 'react-bootstrap/Container'
 // import CSS files
 import 'bootstrap/dist/css/bootstrap.min.css'
-import './App.css';
+import '../App.css';
 import Create from './create'
 import Listings from './listing'
-import { renderIntoDocument } from 'react-dom/test-utils';
 
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      allTodos: [],
       publishedTodos: [],
       completedTodos: 0,
       inProgress: 0,
-      allTodos: 0
+      totalTodos: 0
     }
-    this.updatePublishedTodos = this.updatePublishedTodos.bind(this);
+
+    this.updateAllTodos = this.updateAllTodos.bind(this);
     this.handleCheckBox = this.handleCheckBox.bind(this);
     this.clearList = this.clearList.bind(this);
   }
 
-  updatePublishedTodos(title, duration) {
-    let id = 1;
+  updateAllTodos(title, duration) {
+    let id = this.state.allTodos.length;
     let completed = false;
     const newTodo = {title, duration, id, completed};
-    let updateTodoList = [...this.state.publishedTodos, newTodo]
+    let updatedTodoList = [...this.state.allTodos, newTodo]
+    console.log(updatedTodoList)
     this.setState((state) => ({
-      publishedTodos: updateTodoList,
+      allTodos: updatedTodoList,
+      publishedTodos: updatedTodoList,
       inProgress: state.inProgress + 1,
-      allTodos: state.allTodos + 1
+      totalTodos: state.totalTodos + 1
     }))
-    console.log(this.state.publishedTodos)
   }
 
   handleCheckBox(todo) {
-    const currentTodos = this.state.publishedTodos;
+    const currentTodos = this.state.allTodos;
     currentTodos[todo.target.id].completed = todo.target.checked;
     if(todo.target.checked) {
       this.setState((state) => ({
-        publishedTodos: currentTodos,
+        allTodos: currentTodos,
         completedTodos: state.completedTodos + 1,
         inProgress: state.inProgress -1
       }))
     } else {
       this.setState((state) => ({
-        publishedTodos: currentTodos,
+        allTodos: currentTodos,
         completedTodos: state.completedTodos - 1,
         inProgress: state.inProgress + 1
       }))
     }
-    console.log(this.state)
   }
 
   clearList() {
-    console.log("list cleared!")
     this.setState({
+      allTodos: [],
       publishedTodos: [],
       completedTodos: 0,
       inProgress: 0,
-      allTodos: 0
+      totalTodos: 0
     })
   }
 
@@ -67,7 +68,7 @@ class App extends React.Component {
     return (
       <Container>
         <div className="App">
-          <Create onsubmit={this.updatePublishedTodos} />
+          <Create onsubmit={this.updateAllTodos} />
           <Listings todoinfo={this.state.publishedTodos} handleCheckBox={this.handleCheckBox} appinfo={this.state} clearlist={this.clearList} />
         </div>
       </Container>

@@ -3,64 +3,46 @@ body {
   padding-top: 100px;
   background-color: #ececec;
 }
+*:hover, *:active, *:focus, *:visited {
+  outline: none;
+}
 .App {
   margin: 0 auto;
   width: 500px;
   padding: 50px;
-  background-color: #fff;
-  font-family: 'Quiksand', sans-serif;
 }
-#create-form {
+.app-container {
+  width: 100%;
+  padding: 50px;
+  background-color: #fff;
+}
+.create-form {
   display: flex;
   flex-direction: column;
 }
-.addTodo {
-  width: 40px;
-  height: 40px;
-  margin: 0 auto;
-  border-radius: 50%;
-  -webkit-border-radius: 50%;
-  -moz-border-radius: 50%;
-  -ms-border-radius: 50%;
-  -o-border-radius: 50%;
-}
-.todo-listing h2 {
-  text-align: center;
-}
 .todo-container {
   width: 100%;
-  padding: 25px;
+  padding: 25px 0px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 2px solid black;
+  border-top: 2px solid black;
 }
 .todo-meta {
   display: flex;
+  align-items: center;
 }
 .todo-app-info {
-  margin-top: 25px;
+  padding-top: 25px;
   display: flex;
   justify-content: space-between;
+  border-top: 2px solid black;
 }
 .meta-icon {
-  height: 1.2rem;
+  height: 1rem;
   margin-right: 5px;
 }
 .checkbox {
   height: 30px;
   width: 30px;
-}
-.info-icon {
-  padding: 5px 10px;
-  border-radius: 100%;
-  background-color: red;
-  color: #fff;
-  -webkit-border-radius: 100%;
-  -moz-border-radius: 100%;
-  -ms-border-radius: 100%;
-  -o-border-radius: 100%;
-}
-.remove {
-  margin-left: 20px;
 }
