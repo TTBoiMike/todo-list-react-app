@@ -15,7 +15,8 @@ class App extends React.Component {
       publishedTodos: [],
       completedTodos: 0,
       inProgress: 0,
-      totalTodos: 0
+      totalTodos: 0,
+      visibility: "all"
     }
     this.updateAllTodos = this.updateAllTodos.bind(this);
     this.handleCheckBox = this.handleCheckBox.bind(this);
@@ -27,12 +28,13 @@ class App extends React.Component {
     let id = this.state.allTodos.length;
     let completed = false;
     const newTodo = {title, duration, id, completed};
-    let updatedTodoList = [...this.state.allTodos, newTodo]
+    let updatedTodoList = [...this.state.allTodos, newTodo];
     this.setState((state) => ({
       allTodos: updatedTodoList,
       publishedTodos: updatedTodoList,
       inProgress: state.inProgress + 1,
-      totalTodos: state.totalTodos + 1
+      totalTodos: state.totalTodos + 1,
+      visibility: "all"
     }))
   }
 
@@ -61,7 +63,7 @@ class App extends React.Component {
       completedTodos: 0,
       inProgress: 0,
       totalTodos: 0,
-      date: new Date()
+      visibility: "all"
     })
   }
 
@@ -69,22 +71,25 @@ class App extends React.Component {
     if(filter === "completed") {
         let completedTodos = this.state.allTodos.filter((todo) => todo.completed === true);
         this.setState({
-          publishedTodos: completedTodos
+          publishedTodos: completedTodos,
+          visibility: "completed"
         })
     } else if (filter === "inprogress") {
       let inProgressTodos =  this.state.allTodos.filter((todo) => todo.completed === false)
       this.setState({
-        publishedTodos: inProgressTodos
+        publishedTodos: inProgressTodos,
+        visibility: "in_progress"
       })
     } else {
       this.setState((state) => ({
-        publishedTodos: state.allTodos
+        publishedTodos: state.allTodos,
+        visibility: "all"
       }))
     }
   }
 
   render() {
-    console.log(this.state.publishedTodos)
+    console.log(this.state)
     return (
       <Container>
         <div className="App">

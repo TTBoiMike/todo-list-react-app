@@ -32,11 +32,11 @@ class Create extends React.Component {
                         <option value="15 minutes">15 minutes</option>
                         <option value="30 minutes">30 minutes</option>
                         <option value="45 minutes">45 minutes</option>
-                        <option value="60 minutes">60 minutes</option>
-                        <option value="75 minutes">75 minutes</option>
-                        <option value="90 minutes">90 minutes</option>
-                        <option value="105 minutes">105 minutes</option>
-                        <option value="120 minutes">120 minutes</option>
+                        <option value="60 minutes">1 hour</option>
+                        <option value="75 minutes">1 hour 15 minutes</option>
+                        <option value="90 minutes">1 hour 30 minutes</option>
+                        <option value="105 minutes">1 hour 45 minutes</option>
+                        <option value="120 minutes">2 hours</option>
                     </select>
                 <button type="submit" className="button-add">Add</button>
             </form>
