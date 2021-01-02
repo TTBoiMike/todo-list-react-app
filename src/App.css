@@ -1,57 +1,88 @@
 @import 'https://fonts.googleapis.com/css2?family=Quicksand&display=swap';
 body {
-  padding-top: 100px;
-  background-color: #ececec;
+  min-height: 100vh;
+  background-color: #F0EFE9;
+  font-family: 'Quicksand', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 *:hover, *:active, *:focus, *:visited {
   outline: none;
 }
 .App {
-  margin: 0 auto;
-  width: 500px;
+  width: 450px;
   padding: 50px;
   background-color: #fff;
-
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
 }
 .create-form {
-  margin-bottom: 50px;
+  margin-bottom: 25px;
   display: flex;
   flex-direction: column;
 }
+.todo-info {
+  display: flex;
+  align-items: center;
+}
+/* elements */
+button {
+  margin-top: 25px;
+  border: none;
+}
+button:hover, button:active, button:focus {
+  background-color: #50E3A4;
+  color: #fff;
+  outline: none;
+}
+input, select {
+  padding: 10px;
+  border: none;
+  border-bottom: 2px solid #f2f2f2ff;
+}
+input[type="checkbox"] {
+  height: 30px;
+  width: 30px;
+}
+/* timestamp */
+.timestamp {
+  margin-bottom: 25px;
+  font-size: 1.5rem;
+  color: #565969;
+}
+/* create */
+.button-add {
+  height: 30px;
+  width: 75px;
+  color: #fff;
+  background-color: #50E3A4;
+}  
+/* listing */
 .todo-container {
   width: 100%;
   padding: 25px 0px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 2px solid black;
-}
-.todo-meta {
-  display: flex;
-  align-items: center;
-}
-.todo-app-info {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  border-top: 2px solid black;
+  border-bottom: 2px solid #f2f2f2ff;
 }
 .meta-icon {
   height: 1rem;
   margin-right: 5px;
 }
-.checkbox {
-  height: 30px;
-  width: 30px;
+.button-clear {
+  width: 100%;
 }
-button {
-  margin-top: 25px;
-}
-.button-add {
-
+/* appMeta */
+.todo-app-meta {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border-top: 2px solid #f2f2f2ff;
 }
 .button-filter {
 
-}
-.button-clear {
-  width: 100%;
 }

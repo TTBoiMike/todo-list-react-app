@@ -7,15 +7,15 @@ class Listings extends React.Component {
 
     buildListingHTML() {
             return  this.props.todoinfo.map((todo) => (
-                <div className="todo-container">
+                <div className="todo-container" key={todo.id}>
                     <div>
                         <h5>{todo.title}</h5>
-                        <div className="todo-meta">
+                        <div className="todo-info">
                             <img className="meta-icon" src={Clock} alt="clock icon" />
                             {todo.duration}
                         </div>
                     </div>
-                    <input id={todo.id} onClick={(e) => this.props.handleCheckBox(e)} type="checkbox" className="checkbox" name="completed" checked={todo.completed ? "checked" : ""}/>
+                    <input id={todo.id} onClick={(e) => this.props.handleCheckBox(e)} type="checkbox" name="completed" checked={todo.completed ? "checked" : ""}/>
                 </div>
             ))
         }

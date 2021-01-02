@@ -5,6 +5,7 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import '../App.css';
 import Create from './create'
 import Listings from './listing'
+import Timestamp from './timestamp'
 
 class App extends React.Component {
   constructor(props) {
@@ -59,7 +60,8 @@ class App extends React.Component {
       publishedTodos: [],
       completedTodos: 0,
       inProgress: 0,
-      totalTodos: 0
+      totalTodos: 0,
+      date: new Date()
     })
   }
 
@@ -86,6 +88,7 @@ class App extends React.Component {
     return (
       <Container>
         <div className="App">
+          <Timestamp />
           <Create onsubmit={this.updateAllTodos} />
           <Listings todoinfo={this.state.publishedTodos} handleCheckBox={this.handleCheckBox} appinfo={this.state} clearlist={this.clearList} filter={this.filterPublishedTodos}/>
         </div>
