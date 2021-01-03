@@ -9,7 +9,7 @@ class Listings extends React.Component {
             return  this.props.todoinfo.map((todo) => (
                 <div className="todo-container" key={todo.id}>
                     <div>
-                        <h5>{todo.title}</h5>
+                        <p>{todo.title}</p>
                         <div className="todo-info">
                             <img className="meta-icon" src={Clock} alt="clock icon" />
                             {todo.duration}
@@ -25,7 +25,6 @@ class Listings extends React.Component {
             <div>
                 <AppMeta appinfo={this.props.appinfo} clearlist={this.props.clearlist} filter={this.props.filter}/>
                 {this.buildListingHTML()}
-                <button className="button-clear" onClick={this.props.clearlist}>Clear List</button>
             </div>
         )
     }

@@ -11,17 +11,11 @@ body {
   outline: none;
 }
 .App {
-  width: 450px;
+  width: 100%;
   padding: 50px;
   background-color: #fff;
-  border-radius: 10px;
-  -webkit-border-radius: 10px;
-  -moz-border-radius: 10px;
-  -ms-border-radius: 10px;
-  -o-border-radius: 10px;
 }
 .create-form {
-  margin-bottom: 25px;
   display: flex;
   flex-direction: column;
 }
@@ -31,6 +25,7 @@ body {
 }
 /* elements */
 button {
+  width: 100%;
   margin-top: 25px;
   border: none;
 }
@@ -55,8 +50,6 @@ input[type="checkbox"] {
 }
 /* create */
 .button-add {
-  height: 30px;
-  width: 75px;
   color: #fff;
   background-color: #50E3A4;
 }  
@@ -75,15 +68,11 @@ input[type="checkbox"] {
 }
 .button-clear {
   width: 100%;
+  margin-bottom: 25px;
 }
 /* appMeta */
 .todo-app-meta {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  /* grid-template-columns: repeat(3, 1fr); */
   border-top: 2px solid #f2f2f2ff;
-}
-.todo-app-meta button {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }

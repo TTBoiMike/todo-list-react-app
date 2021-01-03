@@ -18,9 +18,6 @@ class App extends React.Component {
       totalTodos: 0,
       visibility: "all"
     }
-    this.updateAllTodos = this.updateAllTodos.bind(this);
-    this.handleCheckBox = this.handleCheckBox.bind(this);
-    this.clearList = this.clearList.bind(this);
     this.filterPublishedTodos = this.filterPublishedTodos.bind(this)
   }
 
@@ -30,9 +27,10 @@ class App extends React.Component {
       allTodos: JSON.parse(todos) || [],
       publishedTodos: state.allTodos
     }))
+    this.filterPublishedTodos("all")
   }
 
-  updateAllTodos(title, duration) {
+  updateAllTodos = (title, duration) => {
     let id = this.state.allTodos.length;
     let completed = false;
     const newTodo = {title, duration, id, completed};
@@ -46,14 +44,14 @@ class App extends React.Component {
     }), () => localStorage.setItem("todo", JSON.stringify(this.state.allTodos)))
   }
 
-  handleCheckBox(todo) {
+  handleCheckBox = (todo) => {
     const currentTodos = this.state.allTodos;
     currentTodos[todo.target.id].completed = todo.target.checked;
     if(todo.target.checked) {
       this.setState((state) => ({
         allTodos: currentTodos,
         completedTodos: state.completedTodos + 1,
-        inProgress: state.inProgress -1
+        inProgress: state.inProgress !== 0 ? state.inProgress -1 : state.inProgress
       }))
     } else {
       this.setState((state) => ({
@@ -64,7 +62,7 @@ class App extends React.Component {
     }
   }
 
-  clearList() {
+  clearList = () => {
     localStorage.clear()
     this.setState({
       allTodos: [],
@@ -76,7 +74,7 @@ class App extends React.Component {
     })
   }
 
-  filterPublishedTodos(filter) {
+  filterPublishedTodos = (filter) => {
     if(filter === "completed") {
         let completedTodos = this.state.allTodos.filter((todo) => todo.completed === true);
         this.setState({
@@ -103,7 +101,7 @@ class App extends React.Component {
       <Container>
         <div className="App">
           <Timestamp />
-          <Create onsubmit={this.updateAllTodos} />
+          <Create onsubmit={this.updateAllTodos} clearlist={this.clearList}/>
           <Listings todoinfo={this.state.publishedTodos} handleCheckBox={this.handleCheckBox} appinfo={this.state} clearlist={this.clearList} filter={this.filterPublishedTodos}/>
         </div>
       </Container>
