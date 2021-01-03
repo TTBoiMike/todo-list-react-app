@@ -6,17 +6,17 @@ import Clock from '../assets/clock-solid.svg'
 class Listings extends React.Component {
 
     buildListingHTML() {
-            return  this.props.todoinfo.map((todo) => (
-                <div className="todo-container" key={todo.id}>
-                    <div>
-                        <p>{todo.title}</p>
-                        <div className="todo-info">
-                            <img className="meta-icon" src={Clock} alt="clock icon" />
-                            {todo.duration}
-                        </div>
+        return  this.props.todoinfo.map((todo) => (
+            <div className="todo-container" key={todo.id}>
+                <div>
+                    <p>{todo.title}</p>
+                    <div className="todo-info">
+                        <img className="meta-icon" src={Clock} alt="clock icon" />
+                        {todo.duration}
                     </div>
-                    <input id={todo.id} onClick={(e) => this.props.handleCheckBox(e)} type="checkbox" name="completed" checked={todo.completed ? "checked" : ""}/>
                 </div>
+                <input id={todo.id} onClick={(e) => this.props.handleCheckBox(e)} type="checkbox" name="completed" checked={todo.completed ? "checked" : ""}/>
+            </div>
             ))
         }
 
