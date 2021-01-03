@@ -24,6 +24,14 @@ class App extends React.Component {
     this.filterPublishedTodos = this.filterPublishedTodos.bind(this)
   }
 
+  componentDidMount() {
+    const todos = localStorage.getItem("todo");
+    this.setState((state) => ({
+      allTodos: JSON.parse(todos) || [],
+      publishedTodos: state.allTodos
+    }))
+  }
+
   updateAllTodos(title, duration) {
     let id = this.state.allTodos.length;
     let completed = false;
@@ -35,7 +43,7 @@ class App extends React.Component {
       inProgress: state.inProgress + 1,
       totalTodos: state.totalTodos + 1,
       visibility: "all"
-    }))
+    }), () => localStorage.setItem("todo", JSON.stringify(this.state.allTodos)))
   }
 
   handleCheckBox(todo) {
@@ -57,6 +65,7 @@ class App extends React.Component {
   }
 
   clearList() {
+    localStorage.clear()
     this.setState({
       allTodos: [],
       publishedTodos: [],
