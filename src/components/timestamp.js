@@ -11,7 +11,7 @@ class Timestamp extends React.Component {
     render() {
         return (
             <div className="timestamp">
-                <p>{this.state.date.getDate()} / {this.state.date.getMonth()+1} / {this.state.date.getFullYear()}</p>
+                <h4>Todo List - {this.state.date.getDate()} / {this.state.date.getMonth()+1} / {this.state.date.getFullYear()}</h4>
             </div>
         )
     }

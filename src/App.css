@@ -15,6 +15,14 @@ body {
   padding: 50px;
   background-color: #fff;
 }
+@media screen and (min-width: 768px) {
+  .App {
+    width: 450px;
+  }
+  .todo-app-meta {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
 .create-form {
   display: flex;
   flex-direction: column;
@@ -26,7 +34,9 @@ body {
 /* elements */
 button {
   width: 100%;
+  background-color: #8d8b8b;
   border: none;
+  color: #fff;
 }
 button:hover, button:active, button:focus {
   outline: none;
@@ -39,6 +49,7 @@ input, select {
 input[type="checkbox"] {
   height: 30px;
   width: 30px;
+  margin-left: 15px;
 }
 /* timestamp */
 .timestamp {
@@ -68,7 +79,7 @@ input[type="checkbox"] {
 }
 .button-clear {
   width: 100%;
-  margin: 25px 0;
+  margin: 15px 0;
 }
 /* appMeta */
 .todo-app-meta {

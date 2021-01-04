@@ -18,7 +18,6 @@ class App extends React.Component {
       totalTodos: 0,
       visibility: "all"
     }
-    this.filterPublishedTodos = this.filterPublishedTodos.bind(this)
   }
 
   componentDidMount() {
@@ -60,6 +59,7 @@ class App extends React.Component {
         inProgress: state.inProgress + 1
       }))
     }
+    this.filterPublishedTodos(this.state.visibility)
   }
 
   clearList = () => {
@@ -85,7 +85,7 @@ class App extends React.Component {
       let inProgressTodos =  this.state.allTodos.filter((todo) => todo.completed === false)
       this.setState({
         publishedTodos: inProgressTodos,
-        visibility: "in_progress"
+        visibility: "inprogress"
       })
     } else {
       this.setState((state) => ({
