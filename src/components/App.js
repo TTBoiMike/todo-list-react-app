@@ -59,7 +59,9 @@ class App extends React.Component {
         inProgress: state.inProgress + 1
       }))
     }
-    this.filterPublishedTodos(this.state.visibility)
+    setTimeout(() => {
+      this.filterPublishedTodos(this.state.visibility)
+    }, 250)
   }
 
   clearList = () => {
