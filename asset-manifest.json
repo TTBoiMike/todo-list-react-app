@@ -1,26 +1,26 @@
 {
   "files": {
-    "main.css": "/todo-list-react-app/static/css/main.577a6a04.chunk.css",
-    "main.js": "/todo-list-react-app/static/js/main.9f81b56b.chunk.js",
-    "main.js.map": "/todo-list-react-app/static/js/main.9f81b56b.chunk.js.map",
-    "runtime-main.js": "/todo-list-react-app/static/js/runtime-main.4a4ab002.js",
-    "runtime-main.js.map": "/todo-list-react-app/static/js/runtime-main.4a4ab002.js.map",
+    "main.css": "/todo-list-react-app/static/css/main.a16483ab.chunk.css",
+    "main.js": "/todo-list-react-app/static/js/main.4477cc58.chunk.js",
+    "main.js.map": "/todo-list-react-app/static/js/main.4477cc58.chunk.js.map",
+    "runtime-main.js": "/todo-list-react-app/static/js/runtime-main.e9b55370.js",
+    "runtime-main.js.map": "/todo-list-react-app/static/js/runtime-main.e9b55370.js.map",
     "static/css/2.20aa2d7b.chunk.css": "/todo-list-react-app/static/css/2.20aa2d7b.chunk.css",
-    "static/js/2.c94abf63.chunk.js": "/todo-list-react-app/static/js/2.c94abf63.chunk.js",
-    "static/js/2.c94abf63.chunk.js.map": "/todo-list-react-app/static/js/2.c94abf63.chunk.js.map",
-    "static/js/3.09dc58ca.chunk.js": "/todo-list-react-app/static/js/3.09dc58ca.chunk.js",
-    "static/js/3.09dc58ca.chunk.js.map": "/todo-list-react-app/static/js/3.09dc58ca.chunk.js.map",
+    "static/js/2.2d5b8fc6.chunk.js": "/todo-list-react-app/static/js/2.2d5b8fc6.chunk.js",
+    "static/js/2.2d5b8fc6.chunk.js.map": "/todo-list-react-app/static/js/2.2d5b8fc6.chunk.js.map",
+    "static/js/3.78867b12.chunk.js": "/todo-list-react-app/static/js/3.78867b12.chunk.js",
+    "static/js/3.78867b12.chunk.js.map": "/todo-list-react-app/static/js/3.78867b12.chunk.js.map",
     "index.html": "/todo-list-react-app/index.html",
     "static/css/2.20aa2d7b.chunk.css.map": "/todo-list-react-app/static/css/2.20aa2d7b.chunk.css.map",
-    "static/css/main.577a6a04.chunk.css.map": "/todo-list-react-app/static/css/main.577a6a04.chunk.css.map",
-    "static/js/2.c94abf63.chunk.js.LICENSE.txt": "/todo-list-react-app/static/js/2.c94abf63.chunk.js.LICENSE.txt",
+    "static/css/main.a16483ab.chunk.css.map": "/todo-list-react-app/static/css/main.a16483ab.chunk.css.map",
+    "static/js/2.2d5b8fc6.chunk.js.LICENSE.txt": "/todo-list-react-app/static/js/2.2d5b8fc6.chunk.js.LICENSE.txt",
     "static/media/clock-solid.e9b1650f.svg": "/todo-list-react-app/static/media/clock-solid.e9b1650f.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.4a4ab002.js",
+    "static/js/runtime-main.e9b55370.js",
     "static/css/2.20aa2d7b.chunk.css",
-    "static/js/2.c94abf63.chunk.js",
-    "static/css/main.577a6a04.chunk.css",
-    "static/js/main.9f81b56b.chunk.js"
+    "static/js/2.2d5b8fc6.chunk.js",
+    "static/css/main.a16483ab.chunk.css",
+    "static/js/main.4477cc58.chunk.js"
   ]
 }
