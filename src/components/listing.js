@@ -9,13 +9,13 @@ class Listings extends React.Component {
         return  this.props.todoinfo.map((todo) => (
             <div className="todo-container" key={todo.id}>
                 <div>
-                    <p>{todo.title}</p>
+                    <p>{todo.description}</p>
                     <div className="todo-info">
                         <img className="meta-icon" src={Clock} alt="clock icon" />
-                        {todo.duration}
+                        {todo.time}
                     </div>
                 </div>
-                <input id={todo.id} onClick={(e) => this.props.handleCheckBox(e)} type="checkbox" name="completed" checked={todo.completed ? "checked" : ""}/>
+                <input id={todo.id} onClick={(e) => this.props.handleCheckBox(e)} type="checkbox" name="completed" defaultChecked={todo.completed ? "checked" : ""}/>
             </div>
             ))
         }

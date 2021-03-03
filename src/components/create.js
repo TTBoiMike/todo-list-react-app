@@ -5,10 +5,9 @@ class Create extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            title: "",
-            duration: ""
+            description: "",
+            time: ""
         }
-        this.handleSubmit = this.handleSubmit.bind(this)
     }
 
     handleChange(event) {
@@ -17,20 +16,19 @@ class Create extends React.Component {
         this.setState(newState)
     }
 
-    // passes new todo information to state in App.js
-    handleSubmit(event) {
+    handleSubmit = (event) => {
         event.preventDefault();
-        this.props.onsubmit(this.state.title, this.state.duration);
-        event.currentTarget.title.value = ""
-        event.currentTarget.duration.value = ""
+        this.props.onsubmit(this.state);
+        event.currentTarget.description.value = ""
+        event.currentTarget.time.value = ""
     }
 
     render() {
         return (
             <div>
                 <form className="create-form"onChange={(e) => this.handleChange(e)} onSubmit={(e) => this.handleSubmit(e)}>
-                    <input type="text" id="title" placeholder="Add a task" name="title" required />
-                        <select name="duration" id="duration" required>
+                    <input type="text" id="description" placeholder="Add a task" name="description" required />
+                        <select name="time" id="time" required>
                             <option value="">How long will it take?</option>
                             <option value="15 minutes">15 minutes</option>
                             <option value="30 minutes">30 minutes</option>
